@@ -88,7 +88,7 @@ setData([])
         </div>
 
         <div className="search">
-            <input type="text"placeholder="search Event" value={query} onChange={handleinput} />
+            <input type="text"placeholder="search Location" value={query} onChange={handleinput} />
             {
  close && Array.isArray(data) && data.length > 0 && (
     <div className="navsuggest">

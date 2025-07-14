@@ -13,7 +13,6 @@ useEffect(()=>{
 const handledata = await axios.get("https://eventbackend-dery.onrender.com/bookedevents",{withCredentials:true})
 
 const {message,datas} = handledata.data;
-console.log(datas)
 if(Array.isArray(datas) && datas.length > 0){
     setValue(datas)
   

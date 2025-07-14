@@ -40,9 +40,14 @@ function handleupdate(e){
 }
 
 function handleimage(e){
+  if(e.target.files.length >0){
 setFile(e.target.files[0]);
+  }else{
+    setFile(null)
+  }
+
 }
-const imgvval = file ? URL.createObjectURL(file) : null ;
+
 
   
 function handlesubmit(e){
@@ -79,7 +84,7 @@ sendval()
 
 
 }
-
+const imgvval = file ? URL.createObjectURL(file) : form.imageUrl ;
 
     return(
             
@@ -92,16 +97,16 @@ sendval()
              <p>
             Title
           </p>
-          <input type="text" placeholder="Suitable Title"   value={form.title} onChange={handleupdate}   name="title"   />
+          <input type="text" placeholder="Suitable Title"   value={form.title} onChange={handleupdate}   name="title"  required />
            <p>
             Decriptsion
           </p>
-        <textarea name="description" cols={15} rows={4} value={form.description} onChange={handleupdate}  placeholder="Suitable Description"       id=""></textarea> 
+        <textarea name="description" cols={15} rows={4} value={form.description} onChange={handleupdate}  placeholder="Suitable Description"      required></textarea> 
          
              <p>
             Image 
           </p>
-          <input type="file" accept="image/*"  onChange={handleimage}/>
+          <input type="file" accept="image/*"    onChange={handleimage}/>
            <p>
             Price
           </p>

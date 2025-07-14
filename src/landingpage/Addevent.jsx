@@ -106,25 +106,25 @@ const imgval = file ? URL.createObjectURL(file) : null;
              <p>
             Title
           </p>
-          <input type="text" placeholder="Suitable Title"   value={form.title}   name="title"  onChange={handlechange} />
+          <input type="text" placeholder="Suitable Title"   value={form.title}   name="title"  onChange={handlechange} required />
            <p>
             Decriptsion
           </p>
-        <textarea name="description" cols={15} rows={4} value={form.description}  placeholder="Suitable Description" onChange={handlechange}      id=""></textarea>
+        <textarea name="description" cols={15} rows={4} value={form.description}  placeholder="Suitable Description" onChange={handlechange}  required    ></textarea>
          
              <p>
             Image 
           </p>
-          <input type="file" accept="image/*" onChange={handlefilechange} />
+          <input type="file" accept="image/*" onChange={handlefilechange} required />
            <p>
             Price
           </p>
-          <input name="price" id="price-inp" type="number"  value={form.price} onChange={handlechange}  placeholder="XX,XXX" />
+          <input name="price" id="price-inp" type="number"  value={form.price} onChange={handlechange}  placeholder="XX,XXX" required />
          
            <p>
             Location
           </p>
-          <input name="location" id="price-inp" type="text" value={form.location} onChange={handlechange}  placeholder="City , State" />
+          <input name="location" id="price-inp" type="text" value={form.location} onChange={handlechange}  placeholder="City , State" required />
          
 <div className="imgdiv">
 <h3>Preview Image</h3>

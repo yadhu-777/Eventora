@@ -80,13 +80,13 @@ function handlechane(e){
                        <h1 className="header">Signup</h1>
                    
 <p>Name</p>
-                    <input type="text" name="username" value={Signupval.username} placeholder="Your Name" onChange={handlechane} />
+                    <input type="text" name="username" value={Signupval.username} placeholder="Your Name" onChange={handlechane} required />
                     <p>E-mail</p>
-                    <input type="email" name="email" value={Signupval.email} placeholder="Enter Email"  onChange={handlechane} />
+                    <input type="email" name="email" value={Signupval.email} placeholder="Enter Email"  onChange={handlechane} required />
                   
                       <p>Password</p>
                
-                    <input type="password" name="password" value={Signupval.password} placeholder="Password"  onChange={handlechane} />
+                    <input type="password" name="password" value={Signupval.password} placeholder="Password"  onChange={handlechane} required />
                     <button className="btn btn-primary">Signup</button>
 
 

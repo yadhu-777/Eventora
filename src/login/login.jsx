@@ -35,7 +35,7 @@ const{message,status} = sendval.data;
 if(status){
    
     toast.success(message,{position:"top-center"});
-    setSigned(!issigned)
+    setSigned(false)
   setTimeout(()=>{
       navigate("/")
   },500)
@@ -68,11 +68,11 @@ else{
  <label htmlFor="">
                 Username
             </label>
-            <input type="text"  name="email" value={check.email} onChange={handlechnage} placeholder="email"/>
+            <input type="text"  name="email" value={check.email} onChange={handlechnage} placeholder="email" required/>
              <label htmlFor="">
                 Password
             </label>
-            <input type="password" name="password" value={check.password} onChange={handlechnage} placeholder="pasword"/>
+            <input type="password" name="password" value={check.password} onChange={handlechnage} placeholder="pasword" required/>
 <button className="btn btn-primary">Login</button>
 
              </form>
