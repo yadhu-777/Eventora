@@ -9,14 +9,18 @@ import { useState } from "react";
 export default function Hero(){
   const[data,setData] = useState([]);
   useEffect(()=>{
-async function insert(){
+try{
+  async function insert(){
   const res =await axios.get("https://eventbackend-dery.onrender.com/info");
 setData(res.data);
 
 }
 
 insert();
-
+}
+catch(err){
+  console.log(err)
+}
 
   },[data])
  if(data.length === 0) return <div className="load-img"><img src="/load1.gif" alt="loading-gif" /></div>; 
