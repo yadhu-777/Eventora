@@ -25,7 +25,7 @@ const[file,setFile] = useState("");
 useEffect(()=>{
 
  async function recval(){
-    const returnval = await axios.get(`http://localhost:3000/details/${id}`)
+    const returnval = await axios.get(`https://eventbackend-dery.onrender.com/details/${id}`)
     setForm(returnval.data.datas);
 }
 recval()
@@ -57,9 +57,9 @@ formdata.append("price",form.price)
 formdata.append("location",form.location)
 
 async function sendval(){
-    const sendformval = await axios.post("http://localhost:3000/update",formdata,{withCredentials:true});
+    const sendformval = await axios.post("https://eventbackend-dery.onrender.com/update",formdata,{withCredentials:true});
 const{message,status} = sendformval.data;
-console.log(sendformval)
+
     if(!status){
       toast.error(message)
       setTimeout(() => {

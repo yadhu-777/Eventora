@@ -21,14 +21,14 @@ async function handlesubmit(e){
    e.preventDefault();
 
 
-const signup = await axios.post("http://localhost:3000/signup",
+const signup = await axios.post("https://eventbackend-dery.onrender.com/signup",
 Signupval,{withCredentials:true}
 )
 
 
 
 const{message,success} = signup.data;
-console.log(success)
+
 if(success){
   toast.success(message,{position:"top-center"});
   setSigned(false)

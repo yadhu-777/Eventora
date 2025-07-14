@@ -16,7 +16,7 @@ export default function Events(){
      const { id } = useParams();
      useEffect(()=>{
     async function search(){
-        const findval = await axios.get(`http://localhost:3000/details/${id}`,{withCredentials:true})
+        const findval = await axios.get(`https://eventbackend-dery.onrender.com/details/${id}`,{withCredentials:true})
         const{datas,isauth} = findval.data;
       
        
@@ -41,7 +41,7 @@ function edithandle(){
 
 
 async function deletehandle(){
-    const del = await axios.delete(`http://localhost:3000/delete/${id}`,{withCredentials:true});
+    const del = await axios.delete(`https://eventbackend-dery.onrender.com/delete/${id}`,{withCredentials:true});
 
 const{message,status} = del.data;
 if(status){

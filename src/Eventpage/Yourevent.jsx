@@ -22,7 +22,7 @@ export default function Yourevent(){
   useEffect(()=>{
    
 async function insert(){
-  const res =await axios.get("http://localhost:3000/ownevent",{withCredentials:true});
+  const res =await axios.get("https://eventbackend-dery.onrender.com/ownevent",{withCredentials:true});
   const{message,datas} = res.data;
 
   if(message){

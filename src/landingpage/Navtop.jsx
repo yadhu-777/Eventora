@@ -28,7 +28,7 @@ useEffect(()=>{
 
 const time = setTimeout(()=>{
 if(query){
-    axios.get(`http://localhost:3000/suggest?q=${query}`,{withCredentials:true})
+    axios.get(`https://eventbackend-dery.onrender.com/suggest?q=${query}`,{withCredentials:true})
     .then((datas)=> {
        
 setData(datas.data.info)
@@ -43,7 +43,7 @@ setData(datas.data.info)
 
 
 },600)
- console.log(data)
+
     return ()=> clearTimeout(time)
 },[query])
 

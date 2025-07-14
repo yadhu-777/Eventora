@@ -15,7 +15,7 @@ export default function Event(){
      const { id } = useParams();
      useEffect(()=>{
     async function search(){
-        const findval = await axios.get(`http://localhost:3000/details/${id}`,{withCredentials:true})
+        const findval = await axios.get(`https://eventbackend-dery.onrender.com/details/${id}`,{withCredentials:true})
         const{datas} = findval.data;
        
  
@@ -38,9 +38,9 @@ function edithandle(){
 }
 
 async function handlebook(){
-    const sendbook = await axios.post(`http://localhost:3000/book/${id}`,data1,{withCredentials:true})
+    const sendbook = await axios.post(`https://eventbackend-dery.onrender.com/book/${id}`,data1,{withCredentials:true})
 const{message,status} = sendbook.data;
-console.log(sendbook.data)
+
 if(!status){
     toast.error(message)
 }else{

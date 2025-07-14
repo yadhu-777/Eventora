@@ -1,7 +1,4 @@
 
-import { useEffect } from "react"
-import "./Front.css"
-import axios from "axios"
 
 export default function Mainhead(){
 

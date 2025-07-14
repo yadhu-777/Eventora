@@ -7,24 +7,22 @@ import { useEffect } from "react";
 
 export default function Addevent(){
 const navigate = useNavigate();
-const[non,setNone] = useState("")
+const[non,setNone] = useState(null)
   useEffect(()=>{
-   async function isauth(){
-     const vallue =await  axios.get("http://localhost:3000/addevnt",{withCredentials:true})
-    const {message} = vallue.data;
-    if(message){
-      toast.error(message,{position:"top-center"})
-      setNone(null)
-setTimeout(()=>{
-  navigate("/")
+async function send(){
+  const checkval = await axios.get("https://eventbackend-dery.onrender.com/checkevent",{withCredentials:true})
   
-},1000)
- 
-    }
-   
-   }
-    isauth()
-   
+const{message,status} = checkval.data;
+
+if(status){
+setNone("")
+}else{
+  toast.error(message)
+  navigate("/")
+}
+
+}
+   send()
   },[])
 
 
@@ -73,7 +71,7 @@ formdata.append("location",form.location);
 
 
 try{
-  const value = await axios.post("http://localhost:3000/uploads",formdata,{withCredentials:true}
+  const value = await axios.post("https://eventbackend-dery.onrender.com/uploads",formdata,{withCredentials:true}
    
   )
   if(!value) return <div className="load-img"><img src="/load1.gif" alt="loading-gif" /></div>; 
@@ -93,8 +91,9 @@ catch(err){
 
 
 const imgval = file ? URL.createObjectURL(file) : null;
-  if(non === null)return null
 
+
+  
 
     return(
      

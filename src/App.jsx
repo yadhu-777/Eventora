@@ -26,8 +26,10 @@ function App() {
     const {issigned,setSigned} = useContext(Barcontext)
    useEffect(()=>{
   async function send(){
-    const val = await  axios.get("http://localhost:3000/",{withCredentials:true})
-if(Object.keys(val).length >0){
+    const val = await  axios.get("https://eventbackend-dery.onrender.com/chec",{withCredentials:true})
+   const{status} = val.data;
+
+if(!status){
 setSigned(false)
 }
 

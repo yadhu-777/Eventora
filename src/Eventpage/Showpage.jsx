@@ -11,7 +11,7 @@ export default function Showpage(){
    
     const location = useLocation();
 const datas = location.state;
-console.log(datas.val)
+
 
     useEffect(()=>{
        

@@ -1,12 +1,10 @@
 import Button from "./Eventbtn"
 import Mainhead from "./hero"
-import Navtop from "./Navtop"
+
 import Eventtype from "./EventType"
 import Leftevent from "./Leftevent"
 import Rightevent from "./Rightevent"
-import axios from "axios"
-import { useContext, useEffect } from "react"
-import { Barcontext } from "../Barcontext"
+
 
 export  default function Mainpage(){
 

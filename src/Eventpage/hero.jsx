@@ -10,7 +10,7 @@ export default function Hero(){
   const[data,setData] = useState([]);
   useEffect(()=>{
 async function insert(){
-  const res =await axios.get("http://localhost:3000/info");
+  const res =await axios.get("https://eventbackend-dery.onrender.com/info");
 setData(res.data);
 
 }
