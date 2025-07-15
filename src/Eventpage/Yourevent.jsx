@@ -22,9 +22,10 @@ export default function Yourevent(){
   useEffect(()=>{
    
 async function insert(){
+  
   const res =await axios.get("https://eventbackend-dery.onrender.com/ownevent",{withCredentials:true});
   const{message,datas} = res.data;
- const ress =await axios.get("https://eventbackend-dery.onrender.com/del",{withCredentials:true});
+
   if(message){
  toast.error(message,{position:"top-center"})
 setTimeout(()=>{
