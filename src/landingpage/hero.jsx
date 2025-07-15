@@ -10,7 +10,7 @@ export default function Mainhead(){
                 <div className="head">
             <h1 >Looking For Events</h1>
            <h2>
-            You are right at place
+            You are  at right place
            </h2>
           </div>
             </div>
