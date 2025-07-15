@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export default function Addevent(){
 const navigate = useNavigate();
-const[non,setNone] = useState(null)
+const[non,setNone] = useState(false)
   useEffect(()=>{
 async function send(){
   const checkval = await axios.get("https://eventbackend-dery.onrender.com/checkevent",{withCredentials:true})
@@ -15,7 +15,7 @@ async function send(){
 const{message,status} = checkval.data;
 
 if(status){
-setNone("")
+setNone(true)
 }else{
   toast.error(message)
   navigate("/")
@@ -74,7 +74,7 @@ try{
   const value = await axios.post("https://eventbackend-dery.onrender.com/uploads",formdata,{withCredentials:true}
    
   )
-  if(!value) return <div className="load-img"><img src="/load1.gif" alt="loading-gif" /></div>; 
+
   toast.success("success");
   setTimeout(() => {
     navigate("/event");
@@ -93,7 +93,7 @@ catch(err){
 const imgval = file ? URL.createObjectURL(file) : null;
 
 
-  
+    if(!non) return <div className="load-img"><img src="/load1.gif" alt="loading-gif" /></div>; 
 
     return(
      
