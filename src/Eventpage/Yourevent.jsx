@@ -24,7 +24,7 @@ export default function Yourevent(){
 async function insert(){
   const res =await axios.get("https://eventbackend-dery.onrender.com/ownevent",{withCredentials:true});
   const{message,datas} = res.data;
- const ress =await axios.delete("https://eventbackend-dery.onrender.com/del",{withCredentials:true});
+ const ress =await axios.get("https://eventbackend-dery.onrender.com/del",{withCredentials:true});
   if(message){
  toast.error(message,{position:"top-center"})
 setTimeout(()=>{
