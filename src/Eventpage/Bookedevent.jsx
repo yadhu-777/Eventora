@@ -16,7 +16,7 @@ const handledata = await axios.get("https://eventbackend-dery.onrender.com/booke
 const {message,datas} = handledata.data;
 if(Array.isArray(datas) && datas.length > 0){
     setValue(datas)
-  
+  setNone(true)
 }else{
     toast.error(message)
     navigate("/")
@@ -26,7 +26,7 @@ if(Array.isArray(datas) && datas.length > 0){
     }
 handle()
 
-},[])
+},[non])
   if(!non) return <div className="load-img"><img src="/load1.gif" alt="loading-gif" /></div>; 
 
     return(
